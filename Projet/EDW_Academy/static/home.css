@@ -1,0 +1,17 @@
+
+.container  {
+    height: 100vh;
+    margin-bottom: 80px;
+    background-image: url("media/Homebackground.png");
+}
+
+.TitreHome {
+    text-align: center;
+    color: #FCD842;
+    font-size: 100px;
+    text-shadow: 2px 2px black;
+}
+
+.titlecontent {
+    padding-top: calc(100vh - 60vh);
+}

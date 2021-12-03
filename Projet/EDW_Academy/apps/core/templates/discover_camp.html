@@ -1,0 +1,55 @@
+{% load static %}
+
+
+{% block extrahead %}
+<!--Required meta tags-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!--jquery-->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<!--semantic UI-->
+<link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
+<!--custom css & js-->
+
+<link rel="stylesheet" href="{% static 'discover_camp/style.css' %}">
+
+<title>Faire une réservation</title>
+
+<link rel="stylesheet" href="{% static 'discover_camp.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<div id="all">
+    <article id="discovercamp">
+        <h1>CHOOSE YOUR DATES</h1>
+        <select id="campslist">
+            <option selected disabled="true" class="dropdownlist">Click here to pick your dates</option>
+            {% for camp in camps %}
+            {% if camp.type == "Discover_camp" %}
+            {% if camp.nb_registered < camp.nb_places %}
+                <option>{{camp.start_date}} - {{camp.end_date}}</option>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </select>
+
+        <div id="btn-box" class="btn">
+            <a id="button-pswrd" href="{% url 'createorder' 1 %}"><span>I WANT TO PAY</span></a>
+        </div>
+
+        <div class="btn">
+            <a id="button-cancel" href="{% url 'home' %}"><span>CANCEL</span></a>
+        </div>
+
+    </article>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

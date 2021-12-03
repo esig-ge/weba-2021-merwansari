@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block nom %} Camps | {% endblock %}
+
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'courses.css' %}">
+
+{% endblock %}
+<script>
+    var e = document.getElementById("campslist")
+    var selectvalue = e.value
+</script>
+{% block content %}
+
+<article id="moduleleagueoflegends">
+    <div class="center">
+        <div class="titlecamp">
+            <p>MODULE LEAGUE OF LEGENDS</p>
+        </div>
+        <div class="descriptioncamp">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        {% if user.is_authenticated %}
+        <form action="{% url 'courses' %}" method="post">
+            {% csrf_token %}
+            {{ formLOL }}
+            <input type="submit" value="Select"  name="boutonLOL" onclick="location.href='{% url 'createmodule' module_name='League of Legends' %}';">
+        </form>
+        {% endif %}
+        <div class="TheCoaches">
+            <p>THE COACHES</p>
+        </div>
+        <div>
+            <img class="CoachesPicture"  src="{% static 'media/ProfilePic.jpg' %}" height="100" width="100">
+        </div>
+        <div class="CoachesName">
+            <p>Striker</p>
+        </div>
+        <div class="CoachesDescription">
+            <p>Coach of coordination</p>
+        </div>
+    </div>
+</article>
+
+<article id="modulerocketleague">
+    <div class="center">
+        <div class="titlecamp">
+            <p>MODULE ROCKET LEAGUE</p>
+        </div>
+        <div class="descriptioncamp">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        {% if user.is_authenticated %}
+        <form action="{% url 'courses' %}" method="post">
+            {% csrf_token %}
+            {{ formRL }}
+            <input type="submit" value="Select" name="boutonRL">
+        </form>
+        {% endif %}
+        <div class="TheCoaches">
+            <p>THE COACHES</p>
+        </div>
+        <div>
+           <img class="CoachesPicture"  src="{% static 'media/ProfilePic.jpg' %}" height="100" width="100">
+        </div>
+        <div class="CoachesName">
+            <p>Quico Gonzalez</p>
+        </div>
+        <div class="CoachesDescription">
+            <p>Strategic Coach</p>
+        </div>
+    </div>
+</article>
+
+<article id="moduletrackmania">
+    <div class="center">
+        <div class="titlecamp">
+            <p>MODULE TRACKMANIA</p>
+        </div>
+        <div class="descriptioncamp">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        {% if user.is_authenticated %}
+        <form action="{% url 'courses' %}" method="post">
+            {% csrf_token %}
+            {{ formTM }}
+            <input type="submit" value="Select" name="boutonTM">
+        </form>
+        {% endif %}
+        <div class="TheCoaches">
+            <p>THE COACHES</p>
+        </div>
+        <div>
+            <img class="CoachesPicture"  src="{% static 'media/ProfilePic.jpg' %}" height="100" width="100">
+        </div>
+        <div class="CoachesName">
+            <p>Striker</p>
+        </div>
+        <div class="CoachesDescription">
+            <p>Coach of coordination</p>
+        </div>
+    </div>
+</article>
+
+<article id="modulevalorant">
+    <div class="center">
+        <div class="titlecamp">
+            <p>MODULE VALORANT</p>
+        </div>
+        <div class="descriptioncamp">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        {% if user.is_authenticated %}
+        <form action="{% url 'courses' %}" method="post">
+            {% csrf_token %}
+            {{ formVALO }}
+            <input type="submit" value="Select" name="boutonVALO">
+        </form>
+        {% endif %}
+        <div class="TheCoaches">
+            <p>THE COACHES</p>
+        </div>
+        <div>
+            <img class="CoachesPicture"  src="{% static 'media/ProfilePic.jpg' %}" height="100" width="100">
+        </div>
+        <div class="CoachesName">
+            <p>Striker</p>
+        </div>
+        <div class="CoachesDescription">
+            <p>Coach of coordination</p>
+        </div>
+    </div>
+</article>
+
+<article id="modulesupersmashbros">
+    <div class="center">
+        <div class="titlecamp">
+            <p>MODULE SUPER SMASH BROS ULTIMATE</p>
+        </div>
+        <div class="descriptioncamp">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        {% if user.is_authenticated %}
+        <form action="{% url 'courses' %}" method="post">
+            {% csrf_token %}
+            {{ formSSBU }}
+            <input type="submit" value="Select" name="boutonSSBU">
+        </form>
+        {% endif %}
+        <div class="TheCoaches">
+            <p>THE COACHES</p>
+        </div>
+        <div>
+            <img class="CoachesPicture"  src="{% static 'media/ProfilePic.jpg' %}" height="100" width="100">
+        </div>
+        <div class="CoachesName">
+            <p>Striker</p>
+        </div>
+        <div class="CoachesDescription">
+            <p>Coach of coordination</p>
+        </div>
+    </div>
+</article>
+
+<article id="modulehearthstone">
+    <div class="center">
+        <div class="titlecamp">
+            <p>MODULE HEARTHSTONE</p>
+        </div>
+        <div class="descriptioncamp">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        {% if user.is_authenticated %}
+        <form action="{% url 'courses' %}" method="post">
+            {% csrf_token %}
+            {{ formHS }}
+            <input type="submit" value="Select" name="boutonHS">
+        </form>
+        {% endif %}
+        <div class="TheCoaches">
+            <p>THE COACHES</p>
+        </div>
+        <div>
+            <img class="CoachesPicture"  src="{% static 'media/ProfilePic.jpg' %}" height="100" width="100">
+        </div>
+        <div class="CoachesName">
+            <p>Striker</p>
+        </div>
+        <div class="CoachesDescription">
+            <p>Coach of coordination</p>
+        </div>
+    </div>
+</article>
+
+<div id="AfterGame"></div>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'TT Supermolot Neue';
+    src: local('TT Supermolot Neue Condensed Bold Italic'), local('TT-Supermolot-Neue-Condensed-Bold-Italic'),
+        url('fonts/TTSupermolotNeue-CondBoldIt.woff2') format('woff2'),
+        url('fonts/TTSupermolotNeue-CondBoldIt.woff') format('woff'),
+        url('fonts/TTSupermolotNeue-CondBoldIt.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+  }
+
+
+*{
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+
+html, body{
+    margin:0;
+    padding: 0;
+    width: 100%;
+}
+
+
+body {
+    font-family: 'TT Supermolot Neue';
+    background-color: #16192B;
+}
+
+
+#success{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+}
+
+
+p{
+    color: #FCD842;
+    font-size: 30px;
+}

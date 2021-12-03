@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'TT Supermolot Neue';
+    src: local('TT Supermolot Neue Condensed Bold Italic'), local('TT-Supermolot-Neue-Condensed-Bold-Italic'),
+        url('fonts/TTSupermolotNeue-CondBoldIt.woff2') format('woff2'),
+        url('fonts/TTSupermolotNeue-CondBoldIt.woff') format('woff'),
+        url('fonts/TTSupermolotNeue-CondBoldIt.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+.container{
+  width: 700px;
+  background: #16192B;
+  padding-top : calc(100vh - 70vh);
+  height : 100vh;
+  display:table;
+  margin:0 auto;
+}
+
+
+.headerlogin{
+  font-size: 30px;
+  margin-bottom: 30px;
+  font-family: 'TT Supermolot Neue';
+  color: #FCD842;
+  display: flex;
+  justify-content: center;
+}
+.input-field, form .button{
+  margin: 25px 0;
+  position: relative;
+  height: 50px;
+  width: 100%;
+}
+.input-field input{
+  height: 100%;
+  width: 100%;
+  border: 1px solid white;
+  padding-left: 15px;
+  outline: none;
+  font-size: 19px;
+  transition: .4s;
+  background: white;
+}
+input:focus{
+  border: 1px solid black;
+}
+.input-field label, span.show{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.input-field label{
+  left: 15px;
+  pointer-events: none;
+  color: black;
+  font-size: 18px;
+  transition: .4s;
+}
+span.show{
+  right: 20px;
+  color: #111;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  visibility: hidden;
+  font-family: 'TT Supermolot Neue';
+}
+input:valid ~ span.show{
+  visibility: visible;
+}
+input:focus ~ label,
+input:valid ~ label{
+  transform: translateY(-43px);
+  background: transparent;
+  font-size: 16px;
+  color: white;
+}
+
+button:hover {
+  background-color: #FCD842;
+  color: black;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: #16192B;
+  outline: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: 'TT Supermolot Neue';
+  border: 2px solid white;
+}
+
+.container .auth{
+  margin: 35px 0 20px 0;
+  font-size: 19px;
+  color: grey;
+}
+
+.signup{
+  margin-top: 10px;
+  font-family: 'TT Supermolot Neue';
+  color: white;
+}
+.signup a{
+  color: #FCD842;
+  text-decoration: none;
+}
+.signup a:hover{
+  text-decoration: underline;
+}
+
+.erreurlogin{
+  color:red;
+}

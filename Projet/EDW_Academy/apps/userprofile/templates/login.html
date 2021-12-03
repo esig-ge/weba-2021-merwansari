@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block nom %} Login | {% endblock %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+         <div class="headerlogin">LOGIN</div>
+          <form method="POST" action="{% url 'login' %}">
+             {% csrf_token %}
+            <div class="input-field">
+                {{ form.username }}
+{#               <input type="text" required>#}
+               <label>Username</label>
+            </div>
+            <div class="input-field">
+                {{ form.password }}
+{#               <input class="pswrd" type="password" required>#}
+               <label>Password</label>
+            </div>
+             {% if form.errors %}
+                 <p class="erreurlogin">Your email and password don't match, please try again.</p>
+             {% endif %}
+            <div class="button">
+               <button type="submit" value="login">LOGIN</button>
+            </div>
+         </form>
+         <div class="signup">
+            Not a member ? <a href="{% url 'signup' %}">Signup now</a>
+         </div>
+        <div class="signup">
+            Forgot password ? <a href="{% url 'reset_password' %}">Click here</a>
+         </div>
+      </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+</script>
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block nom %} Sign Up | {% endblock %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'signup.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+         <div class="headerlogin">JOIN US !</div>
+         <form method="POST" action=".">
+             {% csrf_token %}
+            <div class="input-field">
+                {{ form.username }}
+{#               <input type="text" required>#}
+               <label>Username*</label>
+            </div>
+             <div class="input-field">
+                 {{ form.first_name }}
+{#               <input type="text" required>#}
+               <label>Name*</label>
+            </div>
+             <div class="input-field">
+                 {{ form.last_name }}
+{#               <input type="text" required>#}
+               <label>Lastname*</label>
+            </div>
+             <div class="input-field">
+                 {{ form.email}}
+{#               <input type="text" required>#}
+               <label>Email*</label>
+            </div>
+            <div class="input-field">
+                {{ form.password1 }}
+{#               <input class="pswrd" type="password" required>#}
+               <label>Password*</label>
+            </div>
+             <div class="input-field">
+                {{ form.password2 }}
+{#               <input class="pswrd" type="password" required>#}
+               <label>Confirm your password*</label>
+            </div>
+             {% if form.errors %}
+                 <p class="errormsg">The password needs to be at least 8 characters</p>
+                 <p class="errormsg">The fields with <span class="asteriskField">*</span> are obligatory</p>
+             {% endif %}
+             <div class="input-date">
+                 <span id="birthdate">Birthdate*</span>
+                 {{ form.birth_date }}
+            </div>
+{#         <span id="gamechoice">Please choose at least one game of your interests :</span>#}
+{#             <div class="games">#}
+{#             <article class="feature1">#}
+{#                <input type="checkbox" id="feature1" name="gamechoice"/>#}
+{#                <div>#}
+{#                  <span>#}
+{#                    Rocket League#}
+{#                  </span>#}
+{#                </div>#}
+{#             </article>#}
+{#             <article class="feature2">#}
+{#                <input type="checkbox" id="feature2" name="gamechoice"/>#}
+{#                <div>#}
+{#                  <span>#}
+{#                    League of Legends#}
+{#                  </span>#}
+{#                    </div>#}
+{#                     </article>#}
+{#                     <article class="feature3">#}
+{#                        <input type="checkbox" id="feature3" name="gamechoice"/>#}
+{#                        <div>#}
+{#                          <span>#}
+{#                            Trackmania#}
+{#                          </span>#}
+{#                        </div>#}
+{#                     </article>#}
+{#                     <article class="feature4">#}
+{#                        <input type="checkbox" id="feature4" name="gamechoice"/>#}
+{#                        <div>#}
+{#                          <span>#}
+{#                            Hearthstone#}
+{#                          </span>#}
+{#                        </div>#}
+{#                     </article>#}
+{#                     <article class="feature5">#}
+{#                        <input type="checkbox" id="feature5" name="gamechoice"/>#}
+{#                        <div>#}
+{#                          <span>#}
+{#                            SuperSmashBros#}
+{#                          </span>#}
+{#                        </div>#}
+{#                     </article>#}
+{#                     <article class="feature6">#}
+{#                        <input type="checkbox" id="feature6" name="gamechoice"/>#}
+{#                        <div>#}
+{#                          <span>#}
+{#                            Valorant#}
+{#                          </span>#}
+{#                        </div>#}
+{#                     </article>#}
+{#                 </div>#}
+               <button name="Create User" type="submit" id="btnValidate" value="Validate" >SIGN UP</button>
+         </form>
+      </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+</script>
+{% endblock %}

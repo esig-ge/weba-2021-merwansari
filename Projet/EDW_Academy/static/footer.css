@@ -1,0 +1,30 @@
+
+.footer {
+    background-color: #16192B;
+}
+
+h3 {
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footercenter {
+    display:table;
+    margin: 0 auto 100px;
+}
+
+
+.footerlink:link{
+    text-decoration: none;
+    font-family: "Titillium Web";
+    color: white;
+}
+.footerlink:hover {
+    color: #FCD842;
+}
+
+#logofooter {
+    margin-left: 30px;
+    padding-bottom: 10px;
+}

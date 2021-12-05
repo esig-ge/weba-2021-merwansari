@@ -1,0 +1,13 @@
+{% load static %}
+
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'charge.css' %}">
+<meta http-equiv = "refresh" content = "5; url = {% url 'home' %}" />
+{% endblock %}
+
+{% block content %}
+        <div id="success">
+            <p>Thank you for your payment ! We will treat your order as soon as possible. You will be redirected in a few seconds.</p>
+        </div>
+{% endblock %}

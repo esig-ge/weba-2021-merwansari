@@ -1,0 +1,123 @@
+#all{
+    background-image: url("media/background-games.jpg");
+    height: 100vh;
+}
+
+#improvecamp{
+    padding-top: 190px;
+    height: 100vh;
+    margin-left: 44%;
+}
+
+#campslist{
+    padding-left: 50%;
+    content-align: center;
+}
+
+#payement{
+    color: #FCD842;
+    font-family: "TT Supermolot Neue";
+    font-size: 20px;
+}
+input {
+  display: inline-table;
+  margin: 0 auto;
+  padding: 20px 20px 20px 20px;
+  font-family: "TT Supermolot Neue";
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid #16192B;
+  outline: none;
+}
+
+option {
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+#button-pswrd {
+  display: block;
+  width: 300px;
+  height: 45px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: "TT Supermolot Neue";
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+#button-pswrd span{
+  position: relative;
+  z-index: 2;
+}
+
+#button-pswrd:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #FCD842;
+  transition: all .35s;
+}
+
+#button-pswrd:hover{
+  color: black;
+}
+
+#button-pswrd:hover:after{
+  width: 100%;
+}
+
+
+
+#button-cancel {
+  display: block;
+  width: 300px;
+  height: 45px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: "TT Supermolot Neue";
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+#button-cancel span{
+  position: relative;
+  z-index: 2;
+}
+
+#button-cancel:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: red;
+  transition: all .35s;
+}
+
+#button-cancel:hover{
+  color: black;
+}
+
+#button-cancel:hover:after{
+  width: 100%;
+}

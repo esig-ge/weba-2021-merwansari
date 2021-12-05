@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "Titillium Web";
+    src: local("TitilliumWeb Regular"), local('TitilliumWeb-Regular'),
+        url("fonts/TitilliumWeb-Regular.ttf") format("truetype");
+}
+
+.Game1{
+    padding-top: 150px;
+    height: 100vh;
+    background-image: url("media/background-games.jpg");
+}
+
+.Game2{
+    padding-top: 190px;
+    height: 100vh;
+}
+
+#AfterGame{
+    padding-top: 100px;
+}
+
+.CoteGauche{
+    padding-top: 2%;
+    padding-left: 65px;
+    float: left;
+}
+
+.CoteDroit{
+    font-size: 47px;
+    text-align: center;
+    padding-right: 50px;
+    padding-left: 1010px;
+}
+
+.GamesName{
+    color: #FCD842;
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 100px;
+}
+
+.GamesDescription{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Titillium Web";
+}
+
+.TheCoaches{
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.CoachesPicture{
+
+}
+
+.CoachesName{
+    color: #FCD842;
+}
+
+
+.CoachesDescription{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Titillium Web";
+}
+
+.ImageGames{
+    border: 5px solid #FCD842;
+}
+
+#coach1{
+    margin-left: -100px;
+
+}

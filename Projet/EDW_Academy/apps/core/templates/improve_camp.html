@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block nom %} Improve Camp | {% endblock %}
+
+{% block extrahead %}
+
+<!--Required meta tags-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!--jquery-->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<!--semantic UI-->
+<link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
+<!--custom css & js-->
+
+<link rel="stylesheet" href="{% static 'improve_camp/style.css' %}">
+<script src="{% static 'improve_camp/mainIC.js'%}" defer></script>
+<script src="{% static 'improve_camp/semantic.js'%}" defer></script>
+<link rel="stylesheet" href="{% static 'improve_camp.css' %}">
+
+<title>Faire une réservation</title>
+
+{% endblock %}
+
+{% block content %}
+<div id="all">
+    <article id="improvecamp">
+        <div id="alert-box"></div>
+        <form class="mt-5" id="game-form" method="POST" >
+            {% csrf_token %}
+            <div class="ui selection dropdown" id="games">
+                <input type="hidden" name="game">
+                <i class="dropdown icon"></i>
+                <div class="default text" id="game-text">Choose a game</div>
+                <div class="menu" id="games-data-box">
+                </div>
+            </div>
+
+            <div class="ui selection dropdown" id="camps">
+                <input type="hidden" name="camp">
+                <i class="dropdown icon"></i>
+                <div class="default text" id="camp-text">Choose a camp</div>
+                <div class="menu" id="camps-data-box"></div>
+
+            </div>
+            <div id="btn-box" class="mt-5">
+                <a id="button-pswrd" href="{% url 'createorder' 2 %}"><span>I WANT TO PAY</span></a>
+            </div>
+
+            <div class="btn">
+            <a id="button-cancel" href="{% url 'home' %}"><span>CANCEL</span></a>
+            </div>
+        </form>
+    </article>
+</div>
+<div id="AfterGame"></div>
+
+
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

@@ -1,0 +1,32 @@
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+
+        <div class="col-lg-6">
+            <div class="box-element">
+                <hr>
+                <h3>Order Summary</h3>
+                <hr>
+                <div class="cart-row">
+                    <div style="flex:2"><p>Order : {{ orders.camp }}</p></div>
+                    <div style="flex:1"><p>Price : {{ orders.camp.price }} CHF</p></div>
+                    <hr id="barre">
+                    <h5>Total : {{ orders.camp.price }} CHF</h5>
+                </div>
+                <form action="{% url 'chargeCamp' %}" method="post">
+                    {% csrf_token %}
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key='{{ STRIPE_PUBLIC_KEY }}'
+                            data-description="Payements Gateway"
+                            data-amount="{{ price }}"
+                            data-locale="auto">
+                    </script>
+                </form>
+            </div>
+        </div>
+
+{% endblock content %}

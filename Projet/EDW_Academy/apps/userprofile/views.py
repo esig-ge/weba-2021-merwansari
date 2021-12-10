@@ -23,7 +23,7 @@ def loginView(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('home')
+            return redirect('{}'.format(request.GET.get('next', 'home')))
         else:
             messages.info(request, 'The email address or password is not valid')
     else:

@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 
@@ -9,6 +10,7 @@ from django.http import JsonResponse
 from apps.reservation.views import createModule
 
 
+@login_required(login_url='login')
 def ticket(request):
     if request.method == "POST":
         ticket = Ticket()

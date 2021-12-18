@@ -5,3 +5,11 @@ function showPopup(content) {
     hidePopup(document.getElementById("pay-popup"));
   }, 2000);
 }
+
+function hidePopup(content, id) {
+  const popup = document.createElement("div");
+  popup.className = "pay-popup";
+  popup.id = id;
+  popup.innerHTML = content;
+  document.body.append(popup);
+}

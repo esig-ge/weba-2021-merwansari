@@ -84,13 +84,13 @@ def createOrder(request, camp_id):
     res = CampOrder(user=request.user, camp=camp, paid=False, status='Pending')
     res.save()
 
-    send_mail(
-        'Your reservation at Edelweisse',
-        'Thanks for booking, if you wanna check ur reservation you can go on your profile and check it on the calendar. If there is any probleme please contact our admins with the Contact Us button on the bottom of your profile page when you are logged. ',
-        settings.EMAIL_HOST_USER,
-        [request.user.email],
-        fail_silently=False
-    )
+    # send_mail(
+    #     'Your reservation at Edelweisse',
+    #     'Thanks for booking, if you wanna check ur reservation you can go on your profile and check it on the calendar. If there is any probleme please contact our admins with the Contact Us button on the bottom of your profile page when you are logged. ',
+    #     settings.EMAIL_HOST_USER,
+    #     [request.user.email],
+    #     fail_silently=False
+    # )
 
     return redirect('checkoutCamp')
 

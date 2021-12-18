@@ -27,29 +27,52 @@
 <div id="all">
     <article id="discovercamp">
         <h1>CHOOSE YOUR DATES</h1>
-        <select id="campslist">
-            <option selected disabled="true" class="dropdownlist">Click here to pick your dates</option>
-            {% for camp in camps %}
-            {% if camp.type == "Discover_camp" %}
-            {% if camp.nb_registered < camp.nb_places %}
-                <option>{{camp.start_date}} - {{camp.end_date}}</option>
-            {% endif %}
-            {% endif %}
-            {% endfor %}
-        </select>
+<!--        <form action="PageObjects" method="post" name="dropdown">-->
+            <select id="campslist">
+                <option selected disabled="true" class="dropdownlist">Click here to pick your dates</option>
+                {% for camp in camps %}
+                {% if camp.type == "Discover_camp" %}
+                {% if camp.nb_registered < camp.nb_places %}
+                    <option>{{camp.start_date}} - {{camp.end_date}}</option>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+            </select>
 
-        <div id="btn-box" class="btn">
-            <a id="button-pswrd" href="{% url 'createorder' 1 %}"><span>I WANT TO PAY</span></a>
-        </div>
+            <div id="btn-box" class="btn">
+                <a id="button-pswrd" href="{% url 'createorder' 1 %}"><span>I WANT TO PAY</span></a>
+            </div>
 
-        <div class="btn">
-            <a id="button-cancel" href="{% url 'home' %}"><span>CANCEL</span></a>
-        </div>
-
+            <div class="btn">
+                <a id="button-cancel" href="{% url 'home' %}"><span>CANCEL</span></a>
+            </div>
+<!--    </form>-->
     </article>
 </div>
 
 {% endblock %}
 
 {% block scripts %}
+<script>
+function showPopup(content, id) {
+  const popup = document.createElement("div");
+  popup.className = "informations-popup";
+  popup.id = id;
+  popup.innerHTML = content;
+  document.body.append(popup);
+}
+
+function hidePopup(popup) {
+  popup.remove();
+}
+
+document.getElementById("campslist").onchange = function() {
+  {% for camp in camps %}
+  showPopup("<h4> Discover camp's price are always 150 CHF and they are here to make you discover new games  </h4>", "informations-popup");
+  {% endfor %}
+  setTimeout(function() {
+    hidePopup(document.getElementById("informations-popup"));
+  }, 2000);
+}
+</script>
 {% endblock %}

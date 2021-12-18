@@ -136,14 +136,14 @@ option {
 
 .informations-popup {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 75%;
+  top: 30%;
   transform: translate(-50%, -50%);
   width: 90vw;
   max-width: 400px;
   height: 90vh;
   max-height: 250px;
-  background: #0099ff;
+  background: white;
   border-radius: 12px;
   padding: 1rem;
 }

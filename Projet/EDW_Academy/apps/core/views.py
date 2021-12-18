@@ -100,7 +100,8 @@ def courses(request):
 def discover_camp(request):
     context = {'camps': Camp.objects.all()}
     print(Camp.objects.all())
-
+    # answer = request.GET['dropdown']
+    # print(answer)
     return render(request, 'discover_camp.html', context)
 
 

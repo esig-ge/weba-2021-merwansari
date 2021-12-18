@@ -133,3 +133,17 @@ option {
 #button-cancel:hover:after{
   width: 100%;
 }
+
+.informations-popup {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 400px;
+  height: 90vh;
+  max-height: 250px;
+  background: #0099ff;
+  border-radius: 12px;
+  padding: 1rem;
+}

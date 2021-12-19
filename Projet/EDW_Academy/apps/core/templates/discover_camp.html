@@ -28,7 +28,7 @@
     <div id="all">
         <article id="discovercamp">
             <h1>CHOOSE YOUR DATES</h1>
-            <!--        <form action="PageObjects" method="post" name="dropdown">-->
+
             <select id="campslist">
                 <option selected disabled="true" class="dropdownlist">Click here to pick your dates</option>
                 {% for camp in camps %}
@@ -47,7 +47,7 @@
             <div class="btn">
                 <a id="button-cancel" href="{% url 'home' %}"><span>CANCEL</span></a>
             </div>
-            <!--    </form>-->
+
         </article>
     </div>
 
@@ -67,12 +67,12 @@
             popup.remove();
         }
 
-        document.getElementById("campslist").onchange = function () {
+        document.getElementById("campslist").addEventListener("change", function () {
             showPopup("<h1>Discover Camps</h1><br><h4> Discover camp's price are always 150 CHF and they are here to make you discover new games. </h4>", "informations-popup");
             setTimeout(function () {
                 hidePopup(document.getElementById("informations-popup"));
-            }, 4000);
-        }
+            }, 4000) });
+
 
     </script>
 {% endblock %}

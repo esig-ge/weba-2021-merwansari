@@ -55,6 +55,7 @@
 
 {% block scripts %}
     <script>
+
         function showPopup(content, id) {
             const popup = document.createElement("div"); // node
             popup.className = "informations-popup";
@@ -63,16 +64,34 @@
             document.body.append(popup); // acroche a node body
         }
 
+        function recherche_info_discover(par) {
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    var reponse = JSON.parse(xhttp.response)
+                    console.log(reponse)
+                    const popup = document.createElement("div"); // node
+                    popup.className = "informations-popup";
+                    popup.innerHTML = reponse; // html de la div
+                    document.body.append(popup); // acroche a node body
+                }
+            }
+            xhttp.open('GET', /info-discover-camp/+par, true)
+            xhttp.send()
+        }
+
+
         function hidePopup(popup) { // fonction pour retirer popup
             popup.remove();
         }
 
-        document.getElementById("campslist").addEventListener("change", function () { // append un event callback
-            showPopup("<h1>Discover Camps</h1><br><h4> Discover camp's price are always 150 CHF and they are here to make you discover new games. </h4>", "informations-popup");
+        document.getElementById("campslist").addEventListener("change", test => { // append un event callback
+            recherche_info_discover(test)
             setTimeout(function () { //callback
                 hidePopup(document.getElementById("informations-popup"));
-            }, 4000) });
-
+            }, 4000)
+        });
 
     </script>
 {% endblock %}

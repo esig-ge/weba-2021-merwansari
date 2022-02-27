@@ -120,3 +120,8 @@ def get_json_camp_data(request, *args, **kwargs):
     selected_game = kwargs.get('game')
     obj_camps = list(Camp.objects.filter(game__name=selected_game).values())
     return JsonResponse({'data': obj_camps})
+
+
+def recherche_info_discover_camp(request):
+    info_discover = list(Camp.objects.values())
+    return JsonResponse({'data': info_discover})

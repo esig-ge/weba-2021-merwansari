@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from apps.core.views import home, camps, games, courses, discover_camp, improve_camp, get_json_game_data, get_json_camp_data, ticket
-from apps.reservation.views import createOrder, ProductLandingPageViewCamp, chargeCamp, ProductLandingPageViewModule, chargeModule, createModule
+from apps.core.views import home, camps, games, courses, discover_camp, improve_camp, get_json_game_data, \
+    get_json_camp_data, ticket, recherche_info_discover_camp
+from apps.reservation.views import createOrder, ProductLandingPageViewCamp, chargeCamp, ProductLandingPageViewModule, \
+    chargeModule, createModule
 from apps.userprofile.views import loginView, signupView, myaccount, PasswordsChangeView, password_changed
 from apps.eventcalendar.views import calendarView
 from django.contrib.auth import views as auth_views
@@ -32,61 +34,67 @@ from django.conf.urls.static import static
 
 urlpatterns = [
 
-    path('', home, name='home'),
-    path('admin/', admin.site.urls),
-    path('camps/', camps, name='camps'),
-    path('courses/', courses, name='courses'),
-    path('games/', games, name='games'),
-    path('discover_camp', discover_camp, name='discover_camp'),
-    path('improve_camp', improve_camp, name='improve_camp'),
-    # path('reservation/success/', success, name='success'),
+                  path('', home, name='home'),
+                  path('admin/', admin.site.urls),
+                  path('camps/', camps, name='camps'),
+                  path('courses/', courses, name='courses'),
+                  path('games/', games, name='games'),
+                  path('discover_camp', discover_camp, name='discover_camp'),
+                  path('improve_camp', improve_camp, name='improve_camp'),
+                  # path('reservation/success/', success, name='success'),
 
-    path('games-json/', get_json_game_data, name='games-json'),
-    path('camps-json/<str:game>/', get_json_camp_data, name='camps-json'),
-    path('improve-camp-order/<int:camp_id>/', createOrder, name="createorder"),
-    path('create-course/<str:module_name>', createModule, name="createmodule"),
-    path('ticket/', ticket, name='ticket'),
+                  path('games-json/', get_json_game_data, name='games-json'),
+                  path('info-discover-camp/', recherche_info_discover_camp, name='info-discover-camp'),
+                  path('camps-json/<str:game>/', get_json_camp_data, name='camps-json'),
+                  path('improve-camp-order/<int:camp_id>/', createOrder, name="createorder"),
+                  path('create-course/<str:module_name>', createModule, name="createmodule"),
+                  path('ticket/', ticket, name='ticket'),
 
-    #CampOrders
+                  # CampOrders
 
-    path('checkout/', ProductLandingPageViewCamp.as_view(), name='checkoutCamp'),
-    path('charge/', chargeCamp, name='chargeCamp'),
+                  path('checkout/', ProductLandingPageViewCamp.as_view(), name='checkoutCamp'),
+                  path('charge/', chargeCamp, name='chargeCamp'),
 
-    #ModuleOrders
+                  # ModuleOrders
 
-    path('checkoutModule/', ProductLandingPageViewModule.as_view(), name='checkoutModule'),
-    path('chargeModule/', chargeModule, name='chargeModule'),
+                  path('checkoutModule/', ProductLandingPageViewModule.as_view(), name='checkoutModule'),
+                  path('chargeModule/', chargeModule, name='chargeModule'),
 
+                  # path('cancel/', CancelView.as_view(), name='cancel'),
+                  # path('success/', SuccessView.as_view(), name='success'),
+                  # path('create-checkout-session/<pk>/', CreateCheckoutSessionView.as_view(), name='create-checkout-session'),
 
+                  # Calendar
 
-    # path('cancel/', CancelView.as_view(), name='cancel'),
-    # path('success/', SuccessView.as_view(), name='success'),
-    # path('create-checkout-session/<pk>/', CreateCheckoutSessionView.as_view(), name='create-checkout-session'),
+                  # Authentification
 
-    #Calendar
+                  path('myaccount/', calendarView, name='myaccount'),
+                  path('login/', loginView, name='login'),
+                  path('signup/', signupView, name='signup'),
+                  path('logout/', views.LogoutView.as_view(), name='logout'),
 
+                  # Changement de mot de passe
 
+                  path('change_password/', PasswordsChangeView.as_view(template_name='change_password.html'),
+                       name='changepassword'),  # changer de mot de passe dans le dashboard
+                  path('password_changed/', password_changed, name='password_changed'),
+                  # page qui apparait lorsque le mot de passe a été changé
 
-    # Authentification
+                  # Reset le mot de passe
 
-    path('myaccount/', calendarView, name='myaccount'),
-    path('login/', loginView, name='login'),
-    path('signup/', signupView, name='signup'),
-    path('logout/', views.LogoutView.as_view(), name='logout'),
+                  path('reset_password/', auth_views.PasswordResetView.as_view(template_name='password_reset.html'),
+                       name="reset_password"),  # Affichage formulaire pour indiquer l'email
 
-    # Changement de mot de passe
+                  path('reset_password_sent/',
+                       auth_views.PasswordResetDoneView.as_view(template_name='password_reset_sent_message.html'),
+                       name="password_reset_done"),  # Message de confirmation de l'envoi du mail
 
-    path('change_password/', PasswordsChangeView.as_view(template_name='change_password.html'), name='changepassword'),# changer de mot de passe dans le dashboard
-    path('password_changed/', password_changed, name='password_changed'), # page qui apparait lorsque le mot de passe a été changé
+                  path('reset/<uidb64>/<token>/',
+                       auth_views.PasswordResetConfirmView.as_view(template_name='password_reset_form.html'),
+                       name="password_reset_confirm"),  # Formulaire pour choisir un mot de passe
 
-    #Reset le mot de passe
+                  path('reset_password_complete/',
+                       auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_done.html'),
+                       name="password_reset_complete")  # Message de confirmation du changement de mot de passe
 
-    path('reset_password/', auth_views.PasswordResetView.as_view(template_name='password_reset.html'), name="reset_password"), # Affichage formulaire pour indiquer l'email
-
-    path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(template_name='password_reset_sent_message.html'), name="password_reset_done"), # Message de confirmation de l'envoi du mail
-
-    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='password_reset_form.html'), name="password_reset_confirm"), # Formulaire pour choisir un mot de passe
-
-    path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_done.html'), name="password_reset_complete") # Message de confirmation du changement de mot de passe
-
-] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -48,7 +48,7 @@ gameInput.addEventListener('change', e=>{
     $.ajax({
         type: 'GET',
         url: `camps-json/${selectedGame}/`,
-        success: function(response){
+        success: function(response){S
             console.log(response.data)
             const campsData = response.data
             campsData.map(item=>{

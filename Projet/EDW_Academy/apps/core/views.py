@@ -120,13 +120,4 @@ def get_json_camp_data(request, *args, **kwargs):
 
 
 def recherche_info_discover_camp(request, *args, **kwargs):
-    selected_camp = kwargs.get('camps')
-    print("Hello mdfk" + selected_camp)
-    obj_camps = list(Camp.objects.filter(id=selected_camp).values())
-    return JsonResponse({'data': obj_camps})
-
-#def recherche_info_discover_camp(request, **kwargs):
-    # campschoisis = Camp.objects.get(price=150)
-    # print(campschoisis.price)
-    # info_discover = list(Camp.objects.filter(id=campschoisis).values())
-    # return JsonResponse({'data': campschoisis})
+    return JsonResponse({'data': list(Camp.objects.all().values())})

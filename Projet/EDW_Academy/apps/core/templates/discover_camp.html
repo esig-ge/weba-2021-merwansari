@@ -114,12 +114,8 @@
         }); */
 
         function getAllCamps(){
-            var res = document.getElementById("campslist");
-            var e = res.value;
-            console.log(e);
-
+            var res = document.getElementById("campslist").value;
             var xhttp = new XMLHttpRequest();
-            xhttp.open('GET', /info-discover-camp/+e, true);
 
             xhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {
@@ -127,10 +123,12 @@
                     console.log(reponse);
                     const popup = document.createElement("div"); // node
                     popup.className = "informations-popup";
-                    popup.innerHTML = reponse; // html de la div
+                    popup.innerHTML = reponse.data[res-1].description; // html de la div
                     document.body.append(popup); // acroche a node body
                 }
             }
+
+            xhttp.open('GET', /info-discover-camp/+res, true);
             xhttp.send();
         }
 

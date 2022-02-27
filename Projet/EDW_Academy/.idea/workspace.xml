@@ -23,8 +23,7 @@
       <ranges>
         <range start1="101" end1="104" start2="101" end2="101" changelist="82abab51-c22f-49c7-b4f5-0a2d29a4771b" />
         <range start1="122" end1="122" start2="119" end2="120" changelist="82abab51-c22f-49c7-b4f5-0a2d29a4771b" />
-        <range start1="123" end1="123" start2="121" end2="126" changelist="94d93b6f-30b5-496e-bf59-41b11e1d9079" />
-        <range start1="124" end1="127" start2="127" end2="132" changelist="94d93b6f-30b5-496e-bf59-41b11e1d9079" />
+        <range start1="123" end1="127" start2="121" end2="123" changelist="94d93b6f-30b5-496e-bf59-41b11e1d9079" />
       </ranges>
     </file>
     <file path="$PROJECT_DIR$/apps/core/templates/discover_camp.html">
@@ -35,8 +34,8 @@
         <range start1="65" end1="66" start2="66" end2="85" changelist="94d93b6f-30b5-496e-bf59-41b11e1d9079" />
         <range start1="67" end1="68" start2="86" end2="87" changelist="82abab51-c22f-49c7-b4f5-0a2d29a4771b" />
         <range start1="69" end1="78" start2="88" end2="103" changelist="94d93b6f-30b5-496e-bf59-41b11e1d9079" />
-        <range start1="79" end1="85" start2="104" end2="122" changelist="94d93b6f-30b5-496e-bf59-41b11e1d9079" />
-        <range start1="86" end1="86" start2="123" end2="139" changelist="94d93b6f-30b5-496e-bf59-41b11e1d9079" />
+        <range start1="79" end1="85" start2="104" end2="129" changelist="94d93b6f-30b5-496e-bf59-41b11e1d9079" />
+        <range start1="86" end1="86" start2="130" end2="137" changelist="94d93b6f-30b5-496e-bf59-41b11e1d9079" />
       </ranges>
     </file>
   </component>
@@ -113,7 +112,7 @@
       <workItem from="1640387956532" duration="1108000" />
       <workItem from="1644182162726" duration="853000" />
       <workItem from="1645895822141" duration="6686000" />
-      <workItem from="1645965629736" duration="18482000" />
+      <workItem from="1645965629736" duration="19372000" />
     </task>
     <servers />
   </component>

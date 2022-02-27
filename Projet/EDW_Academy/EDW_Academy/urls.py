@@ -39,15 +39,15 @@ urlpatterns = [
                   path('camps/', camps, name='camps'),
                   path('courses/', courses, name='courses'),
                   path('games/', games, name='games'),
-                  path('discover_camp', discover_camp, name='discover_camp'),
-                  path('improve_camp', improve_camp, name='improve_camp'),
+                  path('discover_camp/', discover_camp, name='discover_camp'),
+                  path('improve_camp/', improve_camp, name='improve_camp'),
                   # path('reservation/success/', success, name='success'),
 
                   path('games-json/', get_json_game_data, name='games-json'),
-                  path('info-discover-camp/<int:camp_id>', recherche_info_discover_camp, name='info-discover-camp'),
+                  path('info-discover-camp/<int:camp_id>/', recherche_info_discover_camp, name='info-discover-camp'),
                   path('camps-json/<str:game>/', get_json_camp_data, name='camps-json'),
                   path('improve-camp-order/<int:camp_id>/', createOrder, name="createorder"),
-                  path('create-course/<str:module_name>', createModule, name="createmodule"),
+                  path('create-course/<str:module_name>/', createModule, name="createmodule"),
                   path('ticket/', ticket, name='ticket'),
 
                   # CampOrders

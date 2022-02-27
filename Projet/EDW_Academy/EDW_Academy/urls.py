@@ -44,7 +44,7 @@ urlpatterns = [
                   # path('reservation/success/', success, name='success'),
 
                   path('games-json/', get_json_game_data, name='games-json'),
-                  path('info-discover-camp/', recherche_info_discover_camp, name='info-discover-camp'),
+                  path('info-discover-camp/<int:camp_id>', recherche_info_discover_camp, name='info-discover-camp'),
                   path('camps-json/<str:game>/', get_json_camp_data, name='camps-json'),
                   path('improve-camp-order/<int:camp_id>/', createOrder, name="createorder"),
                   path('create-course/<str:module_name>', createModule, name="createmodule"),

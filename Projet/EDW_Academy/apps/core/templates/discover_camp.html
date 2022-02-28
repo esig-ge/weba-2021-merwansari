@@ -123,7 +123,7 @@
                     console.log(reponse);
                     const popup = document.createElement("div"); // node
                     popup.className = "informations-popup";
-                    popup.innerHTML = reponse.data[res-1].description; // html de la div
+                    popup.innerHTML = "Description : "+reponse.data[res-1].description+"Price : "+reponse.data[res-1].price; // html de la div
                     document.body.append(popup); // acroche a node body
                 }
             }

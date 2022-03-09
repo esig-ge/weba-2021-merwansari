@@ -55,64 +55,6 @@
 
 {% block scripts %}
     <script>
-
-        /* function showPopup(content, id) {
-            const popup = document.createElement("div"); // node
-            popup.className = "informations-popup";
-            popup.id = id;
-            popup.innerHTML = content; // html de la div
-            document.body.append(popup); // acroche a node body
-        } */
-
-        /* function recherche_info_discover() {
-            var xhttp = new XMLHttpRequest();
-
-            xhttp.onreadystatechange = function () {
-                if (this.readyState === 4 && this.status === 200) {
-                    var reponse = JSON.parse(xhttp.response)
-                    console.log(reponse)
-                    const popup = document.createElement("div"); // node
-                    popup.className = "informations-popup";
-                    popup.innerHTML = reponse; // html de la div
-                    document.body.append(popup); // acroche a node body
-                }
-            }
-            xhttp.open('GET', /info-discover-camp/, true)
-            xhttp.send()
-        } */
-
-
-        /* function hidePopup(popup) { // fonction pour retirer popup
-            popup.remove();
-        } */
-
-
-        /* document.getElementById("campslist").addEventListener("change", test => { // append un event callback
-            var idcamp = test.target.value
-            console.log(idcamp)
-            function recherche_info_discover() {
-                var xhttp = new XMLHttpRequest();
-
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState === 4 && this.status === 200) {
-                        var reponse = JSON.parse(xhttp.response)
-                        console.log(reponse)
-                        const popup = document.createElement("div"); // node
-                        popup.className = "informations-popup";
-                        popup.innerHTML = reponse; // html de la div
-                        document.body.append(popup); // acroche a node body
-                    }
-                }
-                xhttp.open('GET', /info-discover-camp/+idcamp, true)
-                xhttp.send()
-            }
-
-             recherche_info_discover()
-            //setTimeout(function () { //callback
-            //    hidePopup(document.getElementById("informations-popup"));
-            //}, 4000)
-        }); */
-
         function getAllCamps(){
             var res = document.getElementById("campslist").value;
             var xhttp = new XMLHttpRequest();
@@ -123,7 +65,7 @@
                     console.log(reponse);
                     const popup = document.createElement("div"); // node
                     popup.className = "informations-popup";
-                    popup.innerHTML = "<h1>Discover camp</h1>"+"<br>"+"Description : "+reponse.data[res-1].description+"<br>"+"<br>"+"Price : "+reponse.data[res-1].price+" CHF";; // html de la div
+                    popup.innerHTML = "<h1>Discover camp</h1>"+"<br>"+"Description : "+reponse.data.description+"<br>"+"<br>"+"Price : "+reponse.data.price+" CHF"; // html de la div
                     document.body.append(popup); // acroche a node body
                 }
             }

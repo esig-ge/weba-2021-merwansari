@@ -1,3 +1,5 @@
+import time
+
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
@@ -119,5 +121,8 @@ def get_json_camp_data(request, *args, **kwargs):
     return JsonResponse({'data': obj_camps})
 
 
-def recherche_info_discover_camp(request, *args, **kwargs):
-    return JsonResponse({'data': list(Camp.objects.all().values())})
+def recherche_info_discover_camp(request, camp_id):
+    camp = Camp.objects.get(id=camp_id)
+    CampInfo = {'description': camp.description, 'price': camp.price}
+    return JsonResponse({'data': CampInfo})
+

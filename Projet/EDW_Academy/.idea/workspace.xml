@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94d93b6f-30b5-496e-bf59-41b11e1d9079" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/EDW_Academy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EDW_Academy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/core/templates/discover_camp.html" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/templates/discover_camp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="94d93b6f-30b5-496e-bf59-41b11e1d9079" name="Default Changelist" comment="" />
     <list id="82abab51-c22f-49c7-b4f5-0a2d29a4771b" name="Changes by Nikxl" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +15,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/apps/userprofile/views.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/apps/core/views.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/apps/userprofile/views.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -101,6 +93,9 @@
       <workItem from="1645895822141" duration="6686000" />
       <workItem from="1645965629736" duration="19372000" />
       <workItem from="1646035771697" duration="3821000" />
+      <workItem from="1646143851672" duration="122000" />
+      <workItem from="1646316749379" duration="606000" />
+      <workItem from="1646847885712" duration="1666000" />
     </task>
     <servers />
   </component>
@@ -120,6 +115,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

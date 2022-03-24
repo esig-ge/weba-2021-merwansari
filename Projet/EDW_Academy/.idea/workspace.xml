@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94d93b6f-30b5-496e-bf59-41b11e1d9079" name="Default Changelist" comment="" />
+    <list default="true" id="94d93b6f-30b5-496e-bf59-41b11e1d9079" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/EDW_Academy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EDW_Academy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EDW_Academy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/EDW_Academy/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EDW_Academy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/EDW_Academy/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+    </list>
     <list id="82abab51-c22f-49c7-b4f5-0a2d29a4771b" name="Changes by Nikxl" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +23,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/apps/core/views.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/apps/userprofile/views.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/apps/core/views.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -96,6 +104,10 @@
       <workItem from="1646143851672" duration="122000" />
       <workItem from="1646316749379" duration="606000" />
       <workItem from="1646847885712" duration="1666000" />
+      <workItem from="1647848018567" duration="997000" />
+      <workItem from="1647852044371" duration="126000" />
+      <workItem from="1648109525969" duration="1145000" />
+      <workItem from="1648112273129" duration="2575000" />
     </task>
     <servers />
   </component>
@@ -115,5 +127,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
